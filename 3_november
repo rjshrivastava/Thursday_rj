@@ -1,0 +1,317 @@
+/*
+write a program to create online food order system
+ */
+package pk;
+import java.util.Scanner;
+public class DO_while_demo11 
+{
+
+	public static void main(String args[]) 
+	{
+		// TODO Auto-generated method stub
+		food();
+	}
+	public static void food()
+	{
+	System.out.println("Welcome to anudeep hotel");
+	int choice;
+	char ans;
+	Scanner sc=new Scanner(System.in);
+	int Choice;
+	do {
+	   Choice= sc.nextInt();
+	    String runningTotal;
+		int foodItem;
+		switch(choice){
+	      case 1:
+	        foodItem = 1;
+	        runningTotal += itemPrice(foodItem);
+	        break;
+	      case 2:
+	        foodItem = 2;
+	        runningTotal += itemPrice(foodItem);
+	        break;
+	      case 3:
+	        foodItem = 3;
+	        runningTotal += itemPrice(foodItem);
+	        break;
+	      case 4:
+	        done(runningTotal);
+	        break;
+	      default:
+	System.out.println("Do you want to continue this process y/n");
+	ans=sc.next().charAt(0);
+	}
+	while(ans=='y' ||ans=='Y');
+
+	System.out.println("Thanks for coming :)");
+	
+	boolean ordering;
+	while(ordering);
+	
+	  System.out.println("Total amount: " + runningTotal); 
+	}
+	
+	private static void done(String runningTotal) {
+		// TODO Auto-generated method stub
+		
+	}
+	private static String itemPrice(int foodItem) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
+}
+
+
+----------------------
+
+/* Write a program to display the following pattern
+ 
+    *         	
+   ***		
+  *****		
+ *******		
+*********
+
+ */
+
+package pk;
+
+public class star_up_pattern
+{
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		int rows = 5, k = 0;
+
+	    for (int i = 1; i <= rows; ++i, k = 0) {
+	      for (int space = 1; space <= rows - i; ++space) {
+	        System.out.print("  ");
+	      }
+
+	      while (k != 2 * i - 1) {
+	        System.out.print("* "); 
+	        ++k;
+	      }
+
+	      System.out.println();
+	    }
+	}
+}
+
+	
+--------------
+
+
+/*Write a program to display the following pattern
+
+
+*********
+ *******
+  *****
+   ***
+    *
+   
+   */
+
+package pk;
+
+public class star_down_pattern 
+{
+
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+		for(int i=5;i>=1;i--)
+		{
+			for(int j=5;j>i;j--)
+			{
+				System.out.print(" ");
+			}
+			for (int j=1;j<=(2*i-1);j++)
+			{
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		
+
+	}
+
+}
+-----------------
+-----------------
+/*
+ /*Write a program to display the following pattern
+A
+BC
+DEF
+GHIJ
+KLMNO
+
+ */
+
+
+package pk;
+
+public class alpha_pattern
+{
+
+	public static void main(String[] args)
+	{
+		// TODO Auto-generated method stub
+		char ch = 'A';
+
+		for (int i = 0; i <= 4; i++) {
+
+		for (int j = 0; j <= i; j++) {
+
+			System.out.print(ch++);}
+
+		System.out.println();
+
+		}
+
+	}
+
+}
+-----------------------
+
+ /*Write a program to display the following pattern
+    1
+   10
+  101
+ 1010
+10101
+*/
+
+package pk;
+
+public class number_pattern 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		int i,j;
+		for(i=1;i<=5;i++)
+		{
+			for(j=4;j>=i;j--)
+			{
+				System.out.print(" ");	
+			}
+			for(j=1;j<=i;j++)
+			{
+					if(j%2==0)
+					{
+						System.out.print("0");
+					}
+					else
+					{
+						System.out.print("1");
+					}
+			}
+			System.out.println();
+		}	
+	}
+}
+   
+---------------------
+/*  
+ Write a program to display the following pattern
+******
+*    *
+*    *
+******
+ 
+ */
+
+
+package pk;
+
+public class starbox
+{
+	public static void main(String arg[]) 
+	{
+		// TODO Auto-generated method stub
+		for(int i=0;i<4;i++)
+		{
+			for(int j=0;j<4;j++)
+			{
+				if(i==0||j==0||j==3||i==3)
+				{
+					System.out.print("*");
+				}
+				else
+				{
+					System.out.print(" ");
+				}	
+			}
+		System.out.println();
+		}
+	}
+}
+--------------------------
+
+/*
+Accept age and gender from user and display the rate of interest as follow
+
+age above 60 and gender Male (RI= 7 %)
+age above 60 and gender FeMale (RI= 7.5 %)
+below 60 age = RI 5%
+*/
+
+
+
+
+package pk;
+
+import java.util.Scanner;
+
+public class progm2 
+{
+
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner (System.in);
+		
+		System.out.println("Enter age");
+		int age = sc.nextInt();
+		
+		System.out.println("Enter sex: M/F");
+		int sex = sc.next().charAt(0);
+		
+		if(sex == 'F') 
+		{
+			if(age >= 60) 
+			{
+				System.out.println("Rate of interrest=7.5%");
+			}
+			else if( age <60 ) 
+			{
+				System.out.println("Rate of interrest=5%");
+			}
+		}
+		if(sex == 'M')
+		{
+			if(age >= 60) 
+			{
+				System.out.println("Rate of interrest=7%");
+			}
+			else if( age <60 ) 
+			{
+				System.out.println("Rate of interrest=5%");
+			}
+		else 
+		{
+			System.out.println("ERROR");
+		}
+
+	}
+	}
+}
+-------------
