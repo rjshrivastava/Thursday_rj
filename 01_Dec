@@ -1,0 +1,124 @@
+/*write a program to performing banking operation using constructor  */ 
+ package constructor; 
+  
+ import java.util.scanner; 
+  
+ public class banking { 
+         banking(){                   //constructor  
+                 system.out.println("welcome to world bank...."); 
+                 char accounttype;//2 type 
+                 scanner sc = new scanner(system.in); 
+                 system.out.println("press[c] to create account.\npress[l] to login."); 
+                 accounttype=sc.next().charat(0); 
+                 banking obj3 = new banking(accounttype); 
+                  
+         } 
+         banking(char a){                     //parameterized constructor 
+                  
+                 if(a=='c') {                       // if condition (nested) 
+                         create_account();              //invoking create_account 
+                 } 
+                 else if(a=='l') {                // else if condition 
+                         login_account();              //invoking login_account 
+                 } 
+                 else {                          //else     
+                 system.out.println("invalid input.\ntry again...."); 
+                 } 
+         } 
+          
+         static scanner sc = new scanner(system.in);//---instance type.... 
+         public static void main(string[] args) { 
+                  
+                 banking obj = new banking();              //object creation for invoking constructor 
+          
+         } 
+         static void create_account() {                  //use to create a new account 
+                 string name,middlename,surname,id,pass; 
+                 long contactno; 
+                 int age; 
+                 system.out.println("....creating account...."); 
+                 system.out.print("enter the name:"); 
+                 name = sc.next(); 
+                 system.out.print("enter the middlename:"); 
+                 middlename = sc.next(); 
+                 system.out.print("enter the surname:"); 
+                 surname = sc.next(); 
+                 system.out.print("enter the age:"); 
+                 age = sc.nextint(); 
+                 system.out.print("enter the contactno:"); 
+                 contactno = sc.nextlong(); 
+                 system.out.print("create your id:"); 
+                 id=sc.next(); 
+                 system.out.print("create your password:"); 
+                 pass=sc.next(); 
+                 system.out.println("account created successfully..."); 
+                 system.out.println("-------------------------------"); 
+                 system.out.println("name:"+name); 
+                 system.out.println("middlename:"+middlename); 
+                 system.out.println("surname:"+surname); 
+                 system.out.println("age:"+age); 
+                 system.out.println("contact number:"+contactno); 
+                 system.out.println("-------------------------------"); 
+                  
+                 mainsystem();                                   // invoking mainsystem 
+                  
+                  
+         } 
+         static void login_account() { 
+                 string og_id="amar@123",og_pass="amar@1",id,pass; 
+                 char cont; 
+                  
+                 system.out.println("welcome to world bank's \nlogin page...."); 
+                 do{                                                     //do while loop 
+                         system.out.print("enter the id:"); 
+                         id=sc.next(); 
+                         system.out.print("enter the password:"); 
+                         pass=sc.next(); 
+                         if(og_id.equals(id) && og_pass.equals(pass)) {          //if else loop          
+                                 mainsystem(); 
+                         } 
+                         else { 
+                                 system.out.println("invalid input..."); 
+                         } 
+                         system.out.println("to try again press[y].\nto exit press[n]."); 
+                         cont = sc.next().charat(0); 
+                 }while(cont=='y'); 
+                  
+                  
+         } 
+         static void mainsystem() { 
+                 char sys,cont;// sys---bank system,cont----continue. 
+                 int d,c,b,n; 
+                 int balance = 10000;                 //by default balance 10000 
+                 do{ 
+                         system.out.println("press[d]for deposit....\npress[c]to withdraw....\npress[b]for check balance....\npress[n]for neft...."); 
+                         sys = sc.next().charat(0); 
+                         switch (sys) {                                    //switch case 
+                         case 'd': 
+                                 system.out.print("enter the amount to deposit:"); 
+                                 d=sc.nextint(); 
+                                 balance += d; // balance = balance + d;                 //calculation 
+                                 system.out.println("credited sucessfully"); 
+                                 system.out.println("current balance:"+balance); 
+                                 break; 
+                         case 'c': 
+                                 system.out.print("enter the amount to withdraw:"); 
+                                 c=sc.nextint(); 
+                                 balance -= c; // balance = balance - c;                        
+                                 system.out.println("debited sucessfully"); 
+                                 system.out.println("current balance:"+balance); 
+                                 break; 
+                         case 'b': 
+                                 system.out.println("current balance:"+balance); 
+                                 break; 
+                         case 'n': 
+                                 system.out.print("enter the amount to neft:"); 
+                                 n=sc.nextint(); 
+                                 system.out.println(n+" will be debited in few hours..."); 
+                                 break; 
+                         } 
+                         system.out.println("to continue press[y].\nto exit press[n].");                      
+                         cont = sc.next().charat(0); 
+                 }while(cont=='y'); 
+         } 
+ } 
